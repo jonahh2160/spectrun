@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private InputAction moveAction;
     private InputAction jumpAction;
 
+    [SerializeField] private string[] platformColors;
+    public static string[] selectedColors;
+
     private Vector2 moveAmt;
 
     public float walkSpeed;
@@ -63,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        selectedColors = platformColors;
     }
 
     void Start()
