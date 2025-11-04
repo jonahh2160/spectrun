@@ -266,8 +266,14 @@ MonoBehaviour:
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   platformColors:
   - Red
-  - Red
-  - Red
+  - Green
+  - Blue
+  myLeftArm: {fileID: 2038375458}
+  myRightArm: {fileID: 1898457434}
+  myHead: {fileID: 2007344803}
+  myBody: {fileID: 826683417}
+  myLeftLeg: {fileID: 1450955905}
+  myRightLeg: {fileID: 1730470234}
   walkSpeed: 7
   rotateSpeed: 7
   jumpSpeed: 7
@@ -624,7 +630,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 125798689}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectColor2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &125798689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1153,7 +1171,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 434475156}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectColor1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &434475156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,19 +1273,19 @@ PrefabInstance:
     - target: {fileID: -7064463882279974897, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5b9af6405802d084e9ff7d24fff11b9a, type: 2}
+      objectReference: {fileID: 2100000, guid: f7d8fc6756561c940948bc12423f6779, type: 2}
     - target: {fileID: -5406796968573530463, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5b9af6405802d084e9ff7d24fff11b9a, type: 2}
+      objectReference: {fileID: 2100000, guid: f7d8fc6756561c940948bc12423f6779, type: 2}
     - target: {fileID: -1224016010066918773, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5b9af6405802d084e9ff7d24fff11b9a, type: 2}
+      objectReference: {fileID: 2100000, guid: 27e8f09215735e1499cc7648f05c52a9, type: 2}
     - target: {fileID: -64401809732542778, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5b9af6405802d084e9ff7d24fff11b9a, type: 2}
+      objectReference: {fileID: 2100000, guid: 27e8f09215735e1499cc7648f05c52a9, type: 2}
     - target: {fileID: 919132149155446097, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
       propertyPath: m_Name
       value: Character
@@ -1267,7 +1297,7 @@ PrefabInstance:
     - target: {fileID: 7438096246856917655, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5b9af6405802d084e9ff7d24fff11b9a, type: 2}
+      objectReference: {fileID: 2100000, guid: f7d8fc6756561c940948bc12423f6779, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1737,13 +1767,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1917362643}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectRed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1849,7 +1879,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 645185902}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectColor3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &645185902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2158,13 +2200,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1917362643}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectWhite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2291,13 +2333,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1917362643}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectGreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2341,6 +2383,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733905709}
   m_CullTransparentMesh: 1
+--- !u!1 &826683417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2220719437026602105, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
+  m_PrefabInstance: {fileID: 479328486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &855501089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2955,7 +3002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &966834241
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3199,13 +3246,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1917362643}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectPurple
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3615,13 +3662,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1917362643}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectOrange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3685,7 +3732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1300798016
 Animator:
   serializedVersion: 7
@@ -3926,13 +3973,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1917362643}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectBlack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3976,6 +4023,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440896330}
   m_CullTransparentMesh: 1
+--- !u!1 &1450955905 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8303192060682756516, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
+  m_PrefabInstance: {fileID: 479328486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1477060686
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,13 +4111,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1917362643}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectYellow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4159,7 +4211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.7529412}
+  m_Color: {r: 0.1010772, g: 1, b: 0, a: 0.7529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4309,7 +4361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.7529412}
+  m_Color: {r: 0, g: 0.17721939, b: 1, a: 0.7529412}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4632,13 +4684,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1917362643}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1917362644}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: selectBlue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4682,6 +4734,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697604973}
   m_CullTransparentMesh: 1
+--- !u!1 &1730470234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2578218483817716674, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
+  m_PrefabInstance: {fileID: 479328486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1733344584
 GameObject:
   m_ObjectHideFlags: 0
@@ -5055,6 +5112,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869430387}
   m_CullTransparentMesh: 1
+--- !u!1 &1898457434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3605551206719390918, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
+  m_PrefabInstance: {fileID: 479328486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1911192826
 GameObject:
   m_ObjectHideFlags: 0
@@ -5070,7 +5132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1911192827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5179,8 +5241,20 @@ MonoBehaviour:
   color1: {fileID: 434475153}
   color2: {fileID: 125798686}
   color3: {fileID: 645185900}
-  colorSelectButtons: {fileID: 0}
-  slotSelected: {r: 0, g: 0, b: 0, a: 0}
+  colorSelectButtons: {fileID: 1911192826}
+  HUDColor1: {fileID: 855802875}
+  HUDColor2: {fileID: 1590228034}
+  HUDColor3: {fileID: 1481688989}
+  charRed: {fileID: 2100000, guid: 5b9af6405802d084e9ff7d24fff11b9a, type: 2}
+  charBlue: {fileID: 2100000, guid: f7d8fc6756561c940948bc12423f6779, type: 2}
+  charYellow: {fileID: 2100000, guid: 0b48d8b94f2ebf048ba43b2b5eb23d3e, type: 2}
+  charGreen: {fileID: 2100000, guid: 27e8f09215735e1499cc7648f05c52a9, type: 2}
+  charPurple: {fileID: 2100000, guid: b14bda053b41e06478034bf812b8f8b9, type: 2}
+  charOrange: {fileID: 2100000, guid: f4d191e662e55de48847d4cde7f493db, type: 2}
+  charWhite: {fileID: 2100000, guid: e07bf2bbaf54bb740b23cd1a3b88ebe9, type: 2}
+  charBlack: {fileID: 2100000, guid: 28d460a077bfcf84a8ee4d92fbc202c8, type: 2}
+  charGrey: {fileID: 2100000, guid: 4d6c1e30cd84e3245b30167e352eb2a1, type: 2}
+  slotSelected: {r: 0.5254902, g: 0.5372549, b: 0.5529412, a: 0}
 --- !u!4 &1917362645
 Transform:
   m_ObjectHideFlags: 0
@@ -5196,6 +5270,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2007344803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3191507779277134024, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
+  m_PrefabInstance: {fileID: 479328486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2016109265
 GameObject:
   m_ObjectHideFlags: 0
@@ -5237,6 +5316,11 @@ RectTransform:
 --- !u!4 &2025346782 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
+  m_PrefabInstance: {fileID: 479328486}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2038375458 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4954501172509342936, guid: 0181dcbecdb125e4fa873609314b215b, type: 3}
   m_PrefabInstance: {fileID: 479328486}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2103982523

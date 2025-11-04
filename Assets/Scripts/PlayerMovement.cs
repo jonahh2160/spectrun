@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,20 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private string[] platformColors;
     public static string[] selectedColors;
+
+    [SerializeField] private GameObject myLeftArm;
+    [SerializeField] private GameObject myRightArm;
+    [SerializeField] private GameObject myHead;
+    [SerializeField] private GameObject myBody;
+    [SerializeField] private GameObject myLeftLeg;
+    [SerializeField] private GameObject myRightLeg;
+
+    [SerializeField] public static GameObject leftArm;
+    [SerializeField] public static GameObject rightArm;
+    [SerializeField] public static GameObject head;
+    [SerializeField] public static GameObject body;
+    [SerializeField] public static GameObject leftLeg;
+    [SerializeField] public static GameObject rightLeg;
 
     private Vector2 moveAmt;
 
@@ -67,6 +82,12 @@ public class PlayerMovement : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         selectedColors = platformColors;
+        head = myHead;
+        body = myBody;
+        leftArm = myLeftArm;
+        rightArm = myRightArm;
+        leftLeg = myLeftLeg;
+        rightLeg = myRightLeg;
     }
 
     void Start()
