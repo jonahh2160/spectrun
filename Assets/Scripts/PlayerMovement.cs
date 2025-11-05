@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private string[] platformColors;
     public static string[] selectedColors;
 
+    [SerializeField] private Animator animate;
     [SerializeField] private GameObject myLeftArm;
     [SerializeField] private GameObject myRightArm;
     [SerializeField] private GameObject myHead;
@@ -57,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
         wallrunning,
         crouching,
         sliding,
-        air
+        air,
+        idle
     }
 
     private MovementState state;
@@ -111,7 +113,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!AboveGround())
         {
+            animate.SetTrigger("Jump");
             rb.AddForceAtPosition(new Vector3(0, 5f, 0), Vector3.up, ForceMode.Impulse);
+            state = MovementState.air;
         }
     }
 
@@ -130,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walking()
     {
+        state = MovementState.walking;
         rb.MovePosition(rb.position + transform.forward * moveAmt.y * walkSpeed * Time.deltaTime);
         rb.MovePosition(rb.position + transform.right * moveAmt.x * walkSpeed * Time.deltaTime);
     }
@@ -170,6 +175,26 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             StopWallRun();
+        }
+        if (moveAmt == Vector2.zero && state != MovementState.air) {
+            state = MovementState.idle;
+        }
+        switch (state)
+        {
+            case MovementState.walking:
+                animate.SetTrigger("Run");
+                break;
+            case MovementState.wallrunning:
+                break;
+            case MovementState.air:
+                animate.SetTrigger("Fall");
+                if (AboveGround()) {
+                    animate.SetTrigger("Land");
+                }
+                break;
+            default:
+                animate.SetTrigger("Idle");
+                break;
         }
     }
 
