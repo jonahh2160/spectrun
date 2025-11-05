@@ -13,6 +13,8 @@ public class Menu : MonoBehaviour
 
     public static bool GameIsPaused = false;
 
+    public static bool updatePlatforms = false;
+
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject HUD;
     public GameObject color1;
@@ -61,10 +63,6 @@ public class Menu : MonoBehaviour
                 Pause();
             }
         }
-        if (GameIsPaused)
-        {
-            
-        }
     }
 
     private void setColor(GameObject slot, int index)
@@ -111,6 +109,7 @@ public class Menu : MonoBehaviour
                 break;
         }
         slot.GetComponent<UnityEngine.UI.Image>().color = tempColor;
+        updatePlatforms = true;
     }
 
 
