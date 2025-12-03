@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public float rotateSpeed;
     public float jumpSpeed;
     public float wallRunSpeed;
+    [SerializeField] private float jumpPower;
 
     public LayerMask wall;
     public LayerMask ground;
@@ -114,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
         if (!AboveGround())
         {
             animate.SetTrigger("Jump");
-            rb.AddForceAtPosition(new Vector3(0, 5f, 0), Vector3.up, ForceMode.Impulse);
+            rb.AddForceAtPosition(new Vector3(0, jumpPower, 0), Vector3.up, ForceMode.Impulse);
             state = MovementState.air;
         }
     }
