@@ -36,6 +36,15 @@ public class Menu : MonoBehaviour
     [SerializeField] private Material charBlack;
     [SerializeField] private Material charGrey;
 
+    [SerializeField] private GameObject redButton;
+    [SerializeField] private GameObject blueButton;
+    [SerializeField] private GameObject greenButton;
+    [SerializeField] private GameObject yellowButton;
+    [SerializeField] private GameObject purpleButton;
+    [SerializeField] private GameObject orangeButton;
+    [SerializeField] private GameObject blackButton;
+    [SerializeField] private GameObject whiteButton;
+
     public Color slotSelected;
 
     private Color selectedColor;
@@ -247,5 +256,33 @@ public class Menu : MonoBehaviour
     {
         selectedSlot = 2;
         colorSelectButtons.SetActive(true);
+    }
+
+    public void unlockColor(string color)
+    {
+       switch(color)
+        {
+            case "Blue":
+                blueButton.SetActive(true);
+                break;
+            case "Green":
+                greenButton.SetActive(true);
+                break;
+            case "Yellow":
+                yellowButton.SetActive(true);
+                break;
+            case "Purple":
+                purpleButton.SetActive(true);
+                break;
+            case "Orange":
+                orangeButton.SetActive(true);
+                break;
+            case "Black":
+                blackButton.SetActive(true);
+                break;
+            case "White":
+                whiteButton.SetActive(true);
+                break;
+        }
     }
 }
