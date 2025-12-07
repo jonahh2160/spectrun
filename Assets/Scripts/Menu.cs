@@ -285,4 +285,14 @@ public class Menu : MonoBehaviour
                 break;
         }
     }
+
+    public void goToMainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+    }
+
+    public void exitGame()
+    {
+        Application.Quit();
+    }
 }
