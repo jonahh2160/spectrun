@@ -11,9 +11,14 @@ public class Menu : MonoBehaviour
     public InputActionAsset inputActions;
     private InputAction pauseKey;
 
+    public GameObject curPlayer;
+    public static GameObject player;
+
     public static bool GameIsPaused = false;
 
     public static bool updatePlatforms = false;
+
+    public static bool justLoaded = false;
 
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject HUD;
@@ -36,6 +41,15 @@ public class Menu : MonoBehaviour
     [SerializeField] private Material charBlack;
     [SerializeField] private Material charGrey;
 
+    [SerializeField] private GameObject redButton;
+    [SerializeField] private GameObject blueButton;
+    [SerializeField] private GameObject greenButton;
+    [SerializeField] private GameObject yellowButton;
+    [SerializeField] private GameObject purpleButton;
+    [SerializeField] private GameObject orangeButton;
+    [SerializeField] private GameObject blackButton;
+    [SerializeField] private GameObject whiteButton;
+
     public Color slotSelected;
 
     private Color selectedColor;
@@ -48,8 +62,20 @@ public class Menu : MonoBehaviour
     }
     private void Awake()
     {
+        curPlayer = player;
         pauseKey = InputSystem.actions.FindAction("Pause");
     }
+
+    public static void loadPlayer()
+    {
+        if (justLoaded)
+        {
+            player.transform.position = GameManager.curPos;
+            player.transform.rotation = GameManager.curRot;
+            justLoaded = false;
+        }
+    }
+
     void Update()
     {
         if (pauseKey.WasPressedThisFrame())
@@ -61,6 +87,9 @@ public class Menu : MonoBehaviour
             else
             {
                 Pause();
+                GameManager.curPos = player.transform.position;
+                GameManager.curRot = player.transform.rotation;
+                loadUnlcokedColors();
             }
         }
     }
@@ -247,5 +276,82 @@ public class Menu : MonoBehaviour
     {
         selectedSlot = 2;
         colorSelectButtons.SetActive(true);
+    }
+
+    public void unlockColor(string color)
+    {
+       switch(color)
+        {
+            case "Blue":
+                blueButton.SetActive(true);
+                GameManager.unlockedColors[0] = 1;
+                break;
+            case "Green":
+                greenButton.SetActive(true);
+                GameManager.unlockedColors[1] = 1;
+                break;
+            case "Yellow":
+                yellowButton.SetActive(true);
+                GameManager.unlockedColors[2] = 1;
+                break;
+            case "Purple":
+                purpleButton.SetActive(true);
+                GameManager.unlockedColors[3] = 1;
+                break;
+            case "Orange":
+                orangeButton.SetActive(true);
+                GameManager.unlockedColors[4] = 1;
+                break;
+            case "Black":
+                blackButton.SetActive(true);
+                GameManager.unlockedColors[5] = 1;
+                break;
+            case "White":
+                whiteButton.SetActive(true);
+                GameManager.unlockedColors[6] = 1;
+                break;
+        }
+    }
+
+    public void loadUnlcokedColors()
+    {
+        if (GameManager.unlockedColors[0] == 1)
+        {
+            blueButton.SetActive(true);
+        }
+        if (GameManager.unlockedColors[1] == 1)
+        {
+            greenButton.SetActive(true);
+        }
+        if (GameManager.unlockedColors[2] == 1)
+        {
+            yellowButton.SetActive(true);
+        }
+        if (GameManager.unlockedColors[3] == 1)
+        {
+            purpleButton.SetActive(true);
+        }
+        if (GameManager.unlockedColors[4] == 1)
+        {
+            orangeButton.SetActive(true);
+        }
+        if (GameManager.unlockedColors[5] == 1)
+        {
+            blackButton.SetActive(true);
+        }
+        if (GameManager.unlockedColors[6] == 1)
+        {
+            whiteButton.SetActive(true);
+        }
+    }
+
+    public void goToMainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+    }
+
+    public void exitGame()
+    {
+        Application.Quit();
     }
 }
