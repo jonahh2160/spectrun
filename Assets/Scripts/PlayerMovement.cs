@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     private InputAction moveAction;
     private InputAction jumpAction;
+    
+    private AudioSource audioSource;
 
     [SerializeField] private string[] platformColors;
     public static string[] selectedColors;
@@ -97,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -114,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!AboveGround())
         {
+            audioSource.Play();
             animate.SetTrigger("Jump");
             rb.AddForceAtPosition(new Vector3(0, jumpPower, 0), Vector3.up, ForceMode.Impulse);
             state = MovementState.air;
