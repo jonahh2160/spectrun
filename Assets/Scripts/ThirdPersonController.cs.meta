@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e75357183ea302c4d998136de2cc9669
+guid: 26e54e5a728a9234ab24fcf1460ed8a2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -14,5 +14,5 @@ AssetOrigin:
   productId: 267961
   packageName: 'Starter Assets: Character Controllers | URP'
   packageVersion: 2.0.2
-  assetPath: Assets/Starter Assets/Editor/StarterAssetsDeployMenu.cs
+  assetPath: Assets/Starter Assets/Runtime/ThirdPersonController/Scripts/ThirdPersonController.cs
   uploadId: 721456
