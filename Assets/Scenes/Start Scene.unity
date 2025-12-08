@@ -2533,6 +2533,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerAndSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 2442689494679337708, guid: b9f3416050c054e4d94e1cde2c3bfaf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5596192516196713930, guid: b9f3416050c054e4d94e1cde2c3bfaf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

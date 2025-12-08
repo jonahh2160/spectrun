@@ -48,6 +48,7 @@ public class Interactor : MonoBehaviour
             if (DoInteractionTest(out IInteractable interactable))
             {
                 interactable.Interact(this);
+                Debug.Log("interaction triggered");
             }
         }
     }
