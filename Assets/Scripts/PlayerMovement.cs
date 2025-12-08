@@ -1,0 +1,238 @@
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerMovement : MonoBehaviour
+{
+    public InputActionAsset inputActions;
+
+    private InputAction moveAction;
+    private InputAction jumpAction;
+
+    [SerializeField] private string[] platformColors;
+    public static string[] selectedColors = {"Red", "Red", "Red"};
+
+    [SerializeField] private Animator animate;
+    [SerializeField] private GameObject myLeftArm;
+    [SerializeField] private GameObject myRightArm;
+    [SerializeField] private GameObject myHead;
+    [SerializeField] private GameObject myBody;
+    [SerializeField] private GameObject myLeftLeg;
+    [SerializeField] private GameObject myRightLeg;
+
+    [SerializeField] public static GameObject leftArm;
+    [SerializeField] public static GameObject rightArm;
+    [SerializeField] public static GameObject head;
+    [SerializeField] public static GameObject body;
+    [SerializeField] public static GameObject leftLeg;
+    [SerializeField] public static GameObject rightLeg;
+
+    private Vector2 moveAmt;
+
+    public float walkSpeed;
+    public float rotateSpeed;
+    public float jumpSpeed;
+    public float wallRunSpeed;
+    [SerializeField] private float jumpPower;
+
+    public LayerMask wall;
+    public LayerMask ground;
+
+    public float wallRunForce;
+    public float maxWallRunTime;
+    private float wallRunTimer;
+
+    public float wallCheckDistance;
+    public float minJumpHeight;
+    private RaycastHit leftWallHit;
+    private RaycastHit rightWallHit;
+    private bool wallLeft;
+    private bool wallRight;
+
+    float horizontalInput;
+    float verticalInput;
+
+    public enum MovementState
+    {
+        walking,
+        sprinting,
+        wallrunning,
+        crouching,
+        sliding,
+        air,
+        idle
+    }
+
+    private MovementState state;
+
+    public bool wallrunning;
+    public bool walking;
+
+    Rigidbody rb;
+
+    private void OnEnable()
+    {
+        inputActions.FindActionMap("Player").Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputActions.FindActionMap("Player").Disable();
+    }
+
+    private void Awake()
+    {
+        moveAction = InputSystem.actions.FindAction("Move");
+        jumpAction = InputSystem.actions.FindAction("Jump");
+        selectedColors = GameManager.selectedColors;
+        platformColors = selectedColors;
+        head = myHead;
+        body = myBody;
+        leftArm = myLeftArm;
+        rightArm = myRightArm;
+        leftLeg = myLeftLeg;
+        rightLeg = myRightLeg;
+    }
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+    }
+
+    void Update()
+    {
+        moveAmt = moveAction.ReadValue<Vector2>();
+        CheckForWall();
+        StateMachine();
+        if (jumpAction.WasPressedThisFrame())
+        {
+            Jump();
+        }
+    }
+
+    public void Jump()
+    {
+        if (!AboveGround())
+        {
+            animate.SetTrigger("Jump");
+            rb.AddForceAtPosition(new Vector3(0, jumpPower, 0), Vector3.up, ForceMode.Impulse);
+            state = MovementState.air;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (wallrunning)
+        {
+            WallRunningMove();
+        }
+        else
+        {
+            Walking();
+        }
+    }
+
+
+    private void Walking()
+    {
+        state = MovementState.walking;
+        rb.MovePosition(rb.position + transform.forward * moveAmt.y * walkSpeed * Time.deltaTime);
+        rb.MovePosition(rb.position + transform.right * moveAmt.x * walkSpeed * Time.deltaTime);
+    }
+
+    private void CheckForWall()
+    {
+        wallRight = Physics.Raycast(transform.position, transform.right, out rightWallHit, wallCheckDistance, wall);
+        wallLeft = Physics.Raycast(transform.position, -transform.right, out leftWallHit, wallCheckDistance, wall);
+    }
+
+    private bool AboveGround()
+    {
+        return !Physics.Raycast(transform.position, Vector3.down, minJumpHeight, ground);
+    }
+
+    private void StateHandler()
+    {
+        //Mode - Wallrunning
+        if (wallrunning)
+        {
+            state = MovementState.wallrunning;
+        }
+    }
+
+    private void StateMachine()
+    {
+        horizontalInput = moveAction.ReadValue<Vector2>().x;
+        verticalInput = moveAction.ReadValue<Vector2>().y;
+
+        // State 1 - wallrunning
+        if ((wallLeft || wallRight) && verticalInput > 0 && AboveGround())
+        {
+            if (!wallrunning)
+            {
+                StartWallRun();
+            }
+        }
+        else
+        {
+            StopWallRun();
+        }
+        if (moveAmt == Vector2.zero && state != MovementState.air) {
+            state = MovementState.idle;
+        }
+        switch (state)
+        {
+            case MovementState.walking:
+                animate.SetTrigger("Run");
+                break;
+            case MovementState.wallrunning:
+                break;
+            case MovementState.air:
+                animate.SetTrigger("Fall");
+                if (AboveGround()) {
+                    animate.SetTrigger("Land");
+                }
+                break;
+            default:
+                animate.SetTrigger("Idle");
+                break;
+        }
+    }
+
+    private void StartWallRun()
+    {
+        wallrunning = true;
+    }
+
+    private void WallRunningMove()
+    {
+        rb.useGravity = false;
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+
+        Vector3 wallNormal = wallRight ? rightWallHit.normal : leftWallHit.normal;
+
+        Vector3 wallForward = Vector3.Cross(wallNormal, transform.up);
+
+        if ((transform.forward - wallForward).magnitude > (transform.forward - -wallForward).magnitude)
+        {
+            wallForward = -wallForward;
+        }
+
+        //forward force
+        rb.AddForce(wallForward * wallRunForce, ForceMode.Force);
+
+        //push to wall
+        if (!(wallLeft && horizontalInput > 0) && !(wallRight && horizontalInput < 0))
+        {
+            rb.AddForce(-wallNormal * 100, ForceMode.Force);
+        }
+    }
+
+    private void StopWallRun()
+    {
+        wallrunning = false;
+        rb.useGravity = true;
+    }
+
+}
