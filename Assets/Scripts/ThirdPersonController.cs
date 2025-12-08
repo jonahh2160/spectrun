@@ -46,6 +46,7 @@ namespace StarterAssets
         [Tooltip("Acceleration and deceleration")]
         public float SpeedChangeRate = 10.0f;
 
+        public AudioClip JumpAudioClip;
         public AudioClip LandingAudioClip;
         public AudioClip[] FootstepAudioClips;
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
@@ -185,7 +186,9 @@ namespace StarterAssets
 
             JumpAndGravity();
             GroundedCheck();
+            Debug.Log("Is Player map enabled? " + _playerInput.currentActionMap?.name);
             Move();
+            Debug.Log("Move: " + _input.move);
         }
 
         private void LateUpdate()
@@ -331,6 +334,8 @@ namespace StarterAssets
                 {
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
                     _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+
+                    AudioSource.PlayClipAtPoint(JumpAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
 
                     // update animator if using character
                     if (_hasAnimator)

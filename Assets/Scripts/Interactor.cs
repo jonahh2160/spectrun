@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Interactor : MonoBehaviour
 {
-    [SerializeField] private float interactionRange = 5.0f;
+    [SerializeField] private float interactionRange = 20.0f;
     [SerializeField] private Vector3 offset = new Vector3(0, 1f, 0);
     [SerializeField] private InputActionAsset inputActions;
 

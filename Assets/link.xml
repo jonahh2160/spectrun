@@ -1,0 +1,6 @@
+<linker>
+  <assembly fullname="Assembly-CSharp">
+    <type fullname="StarterAssets.StarterAssetsInputs" preserve="all"/>
+    <type fullname="StarterAssets.ThirdPersonController" preserve="all"/>
+  </assembly>
+</linker>

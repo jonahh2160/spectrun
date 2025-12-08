@@ -2173,7 +2173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformColors: []
-  animate: {fileID: 0}
+  animate: {fileID: 5676671777936447113}
   myLeftArm: {fileID: 3494796496486907168}
   myRightArm: {fileID: 6338369372712051400}
   myHead: {fileID: 783306086453910121}
@@ -2184,6 +2184,7 @@ MonoBehaviour:
   SprintSpeed: 10
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
+  JumpAudioClip: {fileID: 8300000, guid: 4b30a2b5d39f5094a827568992d0b97d, type: 3}
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
   FootstepAudioClips:
   - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
@@ -2196,7 +2197,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
   - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
   - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
-  FootstepAudioVolume: 0.3
+  FootstepAudioVolume: 0.66
   JumpHeight: 3
   Gravity: -15
   JumpTimeout: 0.15
@@ -2341,8 +2342,8 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e4ce1614-c754-48c1-9103-33130441661f
     m_ActionName: UI/New action
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: KeyboardMouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -2358,7 +2359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9afa351950a4a44ab4795d7c9efe523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactor
-  interactionRange: 5
+  interactionRange: 15
   offset: {x: 0, y: 1, z: 0}
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &2937147404800027476
@@ -6014,7 +6015,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7502640521997251995}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 0b3da1f3c3be7b14bbbc3e7c0295b0b4, type: 2}
   m_Controller: {fileID: 9100000, guid: d470a132eea64de4391966c540591c48, type: 2}
   m_CullingMode: 0
