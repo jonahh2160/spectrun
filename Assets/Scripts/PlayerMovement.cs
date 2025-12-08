@@ -84,7 +84,8 @@ public class PlayerMovement : MonoBehaviour
     {
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
-        selectedColors = platformColors;
+        selectedColors = GameManager.selectedColors;
+        platformColors = selectedColors;
         head = myHead;
         body = myBody;
         leftArm = myLeftArm;

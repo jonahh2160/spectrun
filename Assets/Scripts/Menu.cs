@@ -16,7 +16,7 @@ public class Menu : MonoBehaviour
 
     public static bool GameIsPaused = false;
 
-    public static bool updatePlatforms = false;
+    public static bool updatePlatforms = true;
 
     public static bool justLoaded = false;
 
@@ -78,7 +78,8 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        Invoke("loadPlayer", 0.5f);
+        Invoke("loadPlayer", 0.1f);
+        Invoke("upDateColorButtons", 0.1f);
     }
 
     void Update()

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.IO;
+using UnityEditor.Analytics;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static int[] unlockedColors = {0,0,0,0,0,0,0};
     public static Vector3 curPos = Vector3.zero;
     public static Quaternion curRot = Quaternion.identity;
+    public static string[] selectedColors;
 
     public void Awake()
     {
@@ -21,14 +23,17 @@ public class GameManager : MonoBehaviour
         data.rotation = curRot;
         data.curScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         data.unlockedColors = unlockedColors;
+        data.selectedColors = PlayerMovement.selectedColors;
+        Debug.Log(data.selectedColors[1]);
     }
 
     public static void Load(PlayerSaveData data)
     {
         unlockedColors = data.unlockedColors;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(data.curScene);
+        selectedColors = data.selectedColors;
         curPos = data.position;
         curRot = data.rotation;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(data.curScene);
         Menu.justLoaded = true;
     }
     #endregion
@@ -40,6 +45,7 @@ public class GameManager : MonoBehaviour
         public Quaternion rotation;
         public int[] unlockedColors;
         public string curScene;
+        public string[] selectedColors;
     }
 
 
