@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (!AboveGround())
+        if (!AboveGround() && !Menu.GameIsPaused)
         {
             audioSource.PlayOneShot(jumpClip);
             animate.SetTrigger("Jump");
