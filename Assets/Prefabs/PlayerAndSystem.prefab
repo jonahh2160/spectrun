@@ -1201,7 +1201,7 @@ GameObject:
   - component: {fileID: 4920013036614982917}
   - component: {fileID: 901807295726936115}
   - component: {fileID: 7115334990575293470}
-  - component: {fileID: 8328202882129535511}
+  - component: {fileID: 7686576595296282705}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1345,6 +1345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   inputActions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  jumpClip: {fileID: 8300000, guid: 4b30a2b5d39f5094a827568992d0b97d, type: 3}
+  footstepClip: {fileID: 8300000, guid: 0d850260fd4421842af0c4a2037fe987, type: 3}
   platformColors:
   - Red
   - Green
@@ -1373,7 +1375,7 @@ MonoBehaviour:
   minJumpHeight: 2
   wallrunning: 0
   walking: 1
---- !u!82 &8328202882129535511
+--- !u!82 &7686576595296282705
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1384,7 +1386,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 4b30a2b5d39f5094a827568992d0b97d, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1

@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
 
     private InputAction moveAction;
     private InputAction jumpAction;
-    
-    private AudioSource audioSource;
 
     [SerializeField] private string[] platformColors;
     public static string[] selectedColors;
@@ -36,6 +34,12 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed;
     public float wallRunSpeed;
     [SerializeField] private float jumpPower;
+
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private AudioClip footstepClip;
+    [SerializeField] private float footstepInterval = 0.4f;
+    private float footstepTimer = 0f;
 
     public LayerMask wall;
     public LayerMask ground;
@@ -117,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!AboveGround())
         {
-            audioSource.Play();
+            audioSource.PlayOneShot(jumpClip);
             animate.SetTrigger("Jump");
             rb.AddForceAtPosition(new Vector3(0, jumpPower, 0), Vector3.up, ForceMode.Impulse);
             state = MovementState.air;
@@ -140,8 +144,17 @@ public class PlayerMovement : MonoBehaviour
     private void Walking()
     {
         state = MovementState.walking;
+        footstepTimer -= Time.deltaTime;
+
         rb.MovePosition(rb.position + transform.forward * moveAmt.y * walkSpeed * Time.deltaTime);
         rb.MovePosition(rb.position + transform.right * moveAmt.x * walkSpeed * Time.deltaTime);
+
+        if (footstepTimer <= 0f && moveAmt != Vector2.zero && state != MovementState.air)
+        {
+            audioSource.PlayOneShot(footstepClip);
+            footstepTimer = footstepInterval;
+        }
+
     }
 
     private void CheckForWall()
