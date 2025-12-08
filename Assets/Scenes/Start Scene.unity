@@ -2533,6 +2533,46 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1235458919}
+    - target: {fileID: 3911050342813266636, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+      propertyPath: m_ScaleFactor
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911050342813266636, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911050342813266636, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+      propertyPath: m_PhysicalUnit
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911050342813266636, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911050342813266636, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+      propertyPath: m_FallbackScreenDPI
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911050342813266636, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911050342813266636, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911050342813266636, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911050342813266636, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670718475565955481, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4830818168526590739, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
       propertyPath: m_Name
       value: PlayerAndSystem
@@ -2578,7 +2618,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 471076143508304932, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+    - {fileID: 4055005695609205601, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
+    - {fileID: 2278354345698279718, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24b31252eaf3f0743a8ac54051c00b0f, type: 3}
