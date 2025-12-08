@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(data.curScene);
         curPos = data.position;
         curRot = data.rotation;
-        Menu.loadPlayer();
+        Menu.justLoaded = true;
     }
     #endregion
 

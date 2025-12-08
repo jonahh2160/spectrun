@@ -62,11 +62,11 @@ public class Menu : MonoBehaviour
     }
     private void Awake()
     {
-        curPlayer = player;
+        player = curPlayer;
         pauseKey = InputSystem.actions.FindAction("Pause");
     }
 
-    public static void loadPlayer()
+    public void loadPlayer()
     {
         if (justLoaded)
         {
@@ -74,6 +74,11 @@ public class Menu : MonoBehaviour
             player.transform.rotation = GameManager.curRot;
             justLoaded = false;
         }
+    }
+
+    void Start()
+    {
+        Invoke("loadPlayer", 0.5f);
     }
 
     void Update()
