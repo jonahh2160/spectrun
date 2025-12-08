@@ -11,4 +11,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void credits()
+    {
+               UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
+    }
 }
