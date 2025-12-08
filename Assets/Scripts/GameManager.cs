@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static int[] unlockedColors = {0,0,0,0,0,0,0};
     public static Vector3 curPos = Vector3.zero;
     public static Quaternion curRot = Quaternion.identity;
-    public static string[] selectedColors;
+    public static string[] selectedColors = {"Red", "Red", "Red"};
 
     public void Awake()
     {

@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private InputAction jumpAction;
 
     [SerializeField] private string[] platformColors;
-    public static string[] selectedColors;
+    public static string[] selectedColors = {"Red", "Red", "Red"};
 
     [SerializeField] private Animator animate;
     [SerializeField] private GameObject myLeftArm;
