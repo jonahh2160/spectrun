@@ -38,7 +38,8 @@ public class Platform_Visibility : MonoBehaviour
         purplePlatforms.SetActive(false);
         yellowPlatforms.SetActive(false);
         orangePlatforms.SetActive(false);
-        foreach (string color in PlayerMovement.selectedColors)
+        foreach (string color in StarterAssets.ThirdPersonController
+.selectedColors)
         {
             if (color == "Red")
             {

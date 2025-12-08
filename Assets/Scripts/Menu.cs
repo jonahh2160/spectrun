@@ -106,7 +106,8 @@ public class Menu : MonoBehaviour
     private void setColor(GameObject slot, int index)
     {
         Color tempColor;
-        string colorName = PlayerMovement.selectedColors[index];
+        string colorName = StarterAssets.ThirdPersonController
+.selectedColors[index];
         switch (colorName)
         {
             case "Red":
@@ -156,16 +157,22 @@ public class Menu : MonoBehaviour
         switch (index)
         {
             case 0:
-                PlayerMovement.head.GetComponent<SkinnedMeshRenderer>().material = mat;
+                StarterAssets.ThirdPersonController
+.head.GetComponent<SkinnedMeshRenderer>().material = mat;
                 break;
             case 1:
-                PlayerMovement.leftArm.GetComponent<SkinnedMeshRenderer>().material = mat;
-                PlayerMovement.rightArm.GetComponent<SkinnedMeshRenderer>().material = mat;
-                PlayerMovement.body.GetComponent<SkinnedMeshRenderer>().material = mat;
+                StarterAssets.ThirdPersonController
+.leftArm.GetComponent<SkinnedMeshRenderer>().material = mat;
+                StarterAssets.ThirdPersonController
+.rightArm.GetComponent<SkinnedMeshRenderer>().material = mat;
+                StarterAssets.ThirdPersonController
+.body.GetComponent<SkinnedMeshRenderer>().material = mat;
                 break;
             case 2:
-                PlayerMovement.leftLeg.GetComponent<SkinnedMeshRenderer>().material = mat;
-                PlayerMovement.rightLeg.GetComponent<SkinnedMeshRenderer>().material = mat;
+                StarterAssets.ThirdPersonController
+.leftLeg.GetComponent<SkinnedMeshRenderer>().material = mat;
+                StarterAssets.ThirdPersonController
+.rightLeg.GetComponent<SkinnedMeshRenderer>().material = mat;
                 break;
         }
     }
@@ -215,56 +222,64 @@ public class Menu : MonoBehaviour
 
     public void selectRed()
     {
-        PlayerMovement.selectedColors[selectedSlot] = "Red";
+        StarterAssets.ThirdPersonController
+.selectedColors[selectedSlot] = "Red";
         colorSelectButtons.SetActive(false);
         upDateColorButtons();
     }
 
     public void selectBlue()
     {
-        PlayerMovement.selectedColors[selectedSlot] = "Blue";
+        StarterAssets.ThirdPersonController
+.selectedColors[selectedSlot] = "Blue";
         colorSelectButtons.SetActive(false);
         upDateColorButtons();
     }
 
     public void selectGreen()
     {
-        PlayerMovement.selectedColors[selectedSlot] = "Green";
+        StarterAssets.ThirdPersonController
+.selectedColors[selectedSlot] = "Green";
         colorSelectButtons.SetActive(false);
         upDateColorButtons();
     }
 
     public void selectYellow()
     {
-        PlayerMovement.selectedColors[selectedSlot] = "Yellow";
+        StarterAssets.ThirdPersonController
+.selectedColors[selectedSlot] = "Yellow";
         colorSelectButtons.SetActive(false);
         upDateColorButtons();
     }
 
     public void selectPurple()
     {
-        PlayerMovement.selectedColors[selectedSlot] = "Purple";
+        StarterAssets.ThirdPersonController
+.selectedColors[selectedSlot] = "Purple";
         colorSelectButtons.SetActive(false);
         upDateColorButtons();
     }
 
     public void selectOrange()
     {
-        PlayerMovement.selectedColors[selectedSlot] = "Orange";
+        StarterAssets.ThirdPersonController
+.selectedColors[selectedSlot] = "Orange";
         colorSelectButtons.SetActive(false);
         upDateColorButtons();
     }
 
     public void selectBlack()
     {
-        PlayerMovement.selectedColors[selectedSlot] = "Black";
+        StarterAssets.ThirdPersonController
+.selectedColors[selectedSlot] = "Black";
         colorSelectButtons.SetActive(false);
         upDateColorButtons();
     }
 
     public void selectWhite()
     {
-        PlayerMovement.selectedColors[selectedSlot] = "White";
+        StarterAssets.ThirdPersonController
+.selectedColors[selectedSlot] = "White";
         colorSelectButtons.SetActive(false);
         upDateColorButtons();
     }
